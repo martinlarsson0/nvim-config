@@ -54,3 +54,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Create an executable, useful for bash but maybe other times as well??
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- tagbar
+vim.keymap.set("n", "<F8>", ":TagbarToggle<CR>")

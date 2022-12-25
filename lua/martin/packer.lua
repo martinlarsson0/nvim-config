@@ -61,4 +61,7 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+
+    -- Show high-level view of file contents
+    use("preservim/tagbar")
 end)
