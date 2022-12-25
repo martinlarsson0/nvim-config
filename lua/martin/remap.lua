@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":Rex<CR>")
 
 -- Allow moving selected lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
