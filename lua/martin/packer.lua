@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
     -- Gives syntax coloring, might need to add languages
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
+    -- Long classes/functions context
+    use('nvim-treesitter/nvim-treesitter-context')
+
     -- Allows me to bookmark and easily move between different
     -- files. Might need more keybinds if 4 windows turns out
     -- to be too little
