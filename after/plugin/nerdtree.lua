@@ -1,0 +1,1 @@
+--vim.api.nvim_exec([[VimEnter * "<leader>Q"]], false)
