@@ -70,4 +70,7 @@ return require('packer').startup(function(use)
 
     -- Git file diffs
     use("airblade/vim-gitgutter")
+
+    -- Language aware comments
+    use("numToStr/Comment.nvim")
 end)
