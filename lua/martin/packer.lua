@@ -64,4 +64,7 @@ return require('packer').startup(function(use)
 
     -- Show high-level view of file contents
     use("preservim/tagbar")
+
+    -- Git file diffs
+    use("airblade/vim-gitgutter")
 end)
