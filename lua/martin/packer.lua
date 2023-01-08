@@ -90,5 +90,6 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Formatter
     use {"mhartington/formatter.nvim"}
 end)
