@@ -92,4 +92,7 @@ return require('packer').startup(function(use)
 
     -- Formatter
     use {"mhartington/formatter.nvim"}
+
+    -- Testing
+    use {"vim-test/vim-test"}
 end)

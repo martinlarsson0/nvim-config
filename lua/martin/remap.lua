@@ -57,3 +57,12 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- tagbar
 vim.keymap.set("n", "<F8>", ":TagbarToggle<CR>")
+
+-- Tests
+vim.keymap.set("n", "<F1>", ":TestNearest<CR>")
+vim.keymap.set("n", "<F2>", ":TestFile<CR>")
+vim.keymap.set("n", "<F3>", ":TestLast<CR>")
+vim.keymap.set("n", "<F4>", ":TestVisit<CR>")
+
+-- Allow exit terminal mode with esc
+vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
