@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", ":Rex<CR>")
+-- vim.keymap.set("n", "<leader>pv", ":Rex<CR>")
 
 -- Allow moving selected lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -66,3 +66,9 @@ vim.keymap.set("n", "<leader>4", ":TestVisit<CR>")
 
 -- Allow exit terminal mode with esc
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
+
+-- nvim-tree
+vim.keymap.set("n", "<leader>=", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>pv", ":NvimTreeFindFile<CR>")
+-- vim.keymap.set("n", "<F3>", ":NvimTreeRefresh<CR>")
+vim.keymap.set("n", "<leader>-", ":NvimTreeCollapse<CR>")
