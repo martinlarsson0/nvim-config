@@ -6,7 +6,7 @@ lsp.ensure_installed({
 	"tsserver",
 	"eslint",
 	"sumneko_lua",
-	"pyright",
+    "jedi_language_server"
 })
 
 -- Fix Undefined global 'vim'
@@ -65,9 +65,21 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
 
+lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,
+    signs = true,
+    update_in_insert = false,
+    underline = false,
+    severity_sort = true,
+    float = {
+        focusable = false,
+        style = 'minimal',
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
 })
 
-lsp.setup()
