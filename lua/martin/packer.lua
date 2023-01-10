@@ -103,4 +103,6 @@ return require('packer').startup(function(use)
 
     -- Testing
     use {"vim-test/vim-test"}
+
+    use {"nvim-telescope/telescope-file-browser.nvim"}
 end)
