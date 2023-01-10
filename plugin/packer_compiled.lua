@@ -145,7 +145,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-config-local"] = {
-    config = { "\27LJ\2\nõ\1\0\0\6\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0026\3\6\0009\3\a\0039\3\b\3'\5\t\0B\3\2\2'\4\n\0&\3\4\3=\3\v\2B\0\2\1K\0\1\0\rhashfile\18/config-local\tdata\fstdpath\afn\bvim\17config_files\1\0\4\vsilent\1\24autocommands_create\2\20commands_create\2\19lookup_parents\1\1\3\0\0\15.vimrc.lua\v.vimrc\nsetup\17config-local\frequire\0" },
+    config = { "\27LJ\2\nõ\1\0\0\6\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0026\3\6\0009\3\a\0039\3\b\3'\5\t\0B\3\2\2'\4\n\0&\3\4\3=\3\v\2B\0\2\1K\0\1\0\rhashfile\18/config-local\tdata\fstdpath\afn\bvim\17config_files\1\0\4\19lookup_parents\1\vsilent\1\20commands_create\2\24autocommands_create\2\1\3\0\0\15.vimrc.lua\v.vimrc\nsetup\17config-local\frequire\0" },
     loaded = true,
     path = "/Users/martinlarsson/.local/share/nvim/site/pack/packer/start/nvim-config-local",
     url = "https://github.com/klen/nvim-config-local"
@@ -201,6 +201,11 @@ _G.packer_plugins = {
     path = "/Users/martinlarsson/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
     url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/martinlarsson/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/martinlarsson/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -231,7 +236,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-config-local
 time([[Config for nvim-config-local]], true)
-try_loadstring("\27LJ\2\nõ\1\0\0\6\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0026\3\6\0009\3\a\0039\3\b\3'\5\t\0B\3\2\2'\4\n\0&\3\4\3=\3\v\2B\0\2\1K\0\1\0\rhashfile\18/config-local\tdata\fstdpath\afn\bvim\17config_files\1\0\4\vsilent\1\24autocommands_create\2\20commands_create\2\19lookup_parents\1\1\3\0\0\15.vimrc.lua\v.vimrc\nsetup\17config-local\frequire\0", "config", "nvim-config-local")
+try_loadstring("\27LJ\2\nõ\1\0\0\6\0\f\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0026\3\6\0009\3\a\0039\3\b\3'\5\t\0B\3\2\2'\4\n\0&\3\4\3=\3\v\2B\0\2\1K\0\1\0\rhashfile\18/config-local\tdata\fstdpath\afn\bvim\17config_files\1\0\4\19lookup_parents\1\vsilent\1\20commands_create\2\24autocommands_create\2\1\3\0\0\15.vimrc.lua\v.vimrc\nsetup\17config-local\frequire\0", "config", "nvim-config-local")
 time([[Config for nvim-config-local]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
