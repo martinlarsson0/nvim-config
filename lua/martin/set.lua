@@ -45,3 +45,6 @@ vim.opt.colorcolumn = "80"
 
 -- Set leaderkey
 vim.g.mapleader = " "
+
+-- Always copy to clipboard
+vim.o.clipboard = "unnamedplus"
