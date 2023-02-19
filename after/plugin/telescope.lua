@@ -1,7 +1,10 @@
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "[P]roject [F]ind" })
+vim.keymap.set("n", "<leader>phf", "<CMD>Telescope find_files no_ignore=true hidden=true<CR>", { desc = "[P]roject [F]ind" })
 vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Find git files" })
 vim.keymap.set("n", "<leader>ps", builtin.live_grep)
+vim.keymap.set("n", "<leader>pr", builtin.resume)
+vim.keymap.set("n", "<leader>pp", builtin.pickers)
 
 local ts_select_dir_for_grep = function(prompt_bufnr)
   local action_state = require("telescope.actions.state")
@@ -43,6 +46,11 @@ require("telescope").setup({
         },
       },
     },
+  },
+  defaults = {
+      cache_picker = {
+          num_pickers = 10,
+      },
   },
 })
 
