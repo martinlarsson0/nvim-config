@@ -99,7 +99,11 @@ return require('packer').startup(function(use)
     }
 
     -- Formatter
-    use {"mhartington/formatter.nvim"}
+    use {
+        "williamboman/mason.nvim",
+        "jose-elias-alvarez/null-ls.nvim",
+        "jay-babu/mason-null-ls.nvim",
+    }
 
     -- Testing
     use {"vim-test/vim-test"}
@@ -107,7 +111,7 @@ return require('packer').startup(function(use)
     -- Used primarily for filtering on folders when grepping, has other uses
     -- as well
     use {"nvim-telescope/telescope-file-browser.nvim"}
-    
+ 
     -- Faster telescope sorting
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 end)
