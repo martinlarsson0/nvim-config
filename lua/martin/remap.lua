@@ -67,6 +67,9 @@ vim.keymap.set("n", "<leader>4", ":TestVisit<CR>")
 -- Allow exit terminal mode with esc
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
 
+-- Keybind for splitting and starting a terminal
+vim.keymap.set("n", "<leader>t", ":split<CR>:terminal ")
+
 -- nvim-tree
 vim.keymap.set("n", "<leader>=", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>pv", ":NvimTreeFindFile<CR>")
