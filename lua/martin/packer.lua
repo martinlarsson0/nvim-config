@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
     -- to be too little
     use('ThePrimeagen/harpoon')
 
+    -- Vim training
+    use('ThePrimeagen/vim-be-good')
+
     -- Allows me to see a tree representation of changes made
     -- to a file, as well as go back in time and keep several
     -- "branches" of my code
