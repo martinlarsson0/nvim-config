@@ -77,7 +77,7 @@ return require('packer').startup(function(use)
     }
 
     -- Copilot
-    use ('https://github.com/github/copilot.vim')
+    use { "zbirenbaum/copilot.lua" }
 
     -- Show high-level view of file contents
     use("preservim/tagbar")
