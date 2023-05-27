@@ -4,7 +4,7 @@ require("mason-null-ls").setup({
         -- Opt to list sources here, when available in mason.
     },
     automatic_installation = false,
-    automatic_setup = true, -- Recommended, but optional
+    handlers = {},
 })
 require("null-ls").setup({
     sources = {
