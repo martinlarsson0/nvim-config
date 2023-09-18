@@ -55,7 +55,7 @@ local plugins = {
     'mbbill/undotree',
 
     -- Git integration
-    'tpope/vim-fugitive',
+    {'tpope/vim-fugitive', dependencies = { 'tpope/vim-rhubarb' }},
 
     -- LSP
      {
