@@ -5,13 +5,23 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+
+local function my_on_attach(bufnr)
+    local api = require('nvim-tree.api')
+    -- Use all default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- Remove ctrl + e mapping
+    vim.keymap.del('n', '<C-e>', { buffer = bufnr })
+end
+
 -- setup with some options
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
-    remove_keymaps = {"<C-e>"},
     view = {
         adaptive_size = true,
     },
+    on_attach = my_on_attach,
 })
 
 local function open_nvim_tree(data)
