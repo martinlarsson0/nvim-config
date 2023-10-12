@@ -22,6 +22,11 @@ require("nvim-tree").setup({
         adaptive_size = true,
     },
     on_attach = my_on_attach,
+    git = {
+        enable = true,
+        ignore = false,
+        timeout = 500,
+    },
 })
 
 local function open_nvim_tree(data)
