@@ -75,3 +75,42 @@ vim.keymap.set("n", "<leader>=", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>pv", ":NvimTreeFindFile<CR>")
 -- vim.keymap.set("n", "<F3>", ":NvimTreeRefresh<CR>")
 vim.keymap.set("n", "<leader>-", ":NvimTreeCollapse<CR>")
+
+--"Show LSP references"
+vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>") -- show definition, references
+
+--"Go to declaration"
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration) -- go to declaration
+
+--"Show LSP definitions"
+vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>") -- show lsp definitions
+
+--"Show LSP implementations"
+vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>") -- show lsp implementations
+
+--"Show LSP type definitions"
+vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>") -- show lsp type definitions
+
+--"See available code actions"
+vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action) -- see available code actions, in visual mode will apply to selection
+
+--"Smart rename"
+vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename) -- smart rename
+
+--"Show buffer diagnostics"
+vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>") -- show  diagnostics for file
+
+--"Show line diagnostics"
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float) -- show diagnostics for line
+
+--"Go to previous diagnostic"
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev) -- jump to previous diagnostic in buffer
+
+--"Go to next diagnostic"
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next) -- jump to next diagnostic in buffer
+
+--"Show documentation for what is under cursor"
+vim.keymap.set("n", "K", vim.lsp.buf.hover) -- show documentation for what is under cursor
+
+--"Restart LSP"
+vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
