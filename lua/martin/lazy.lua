@@ -31,6 +31,7 @@ local plugins = {
 				"black", -- formatter
 				"isort", -- organize imports
 				"taplo", -- LSP for toml (for pyproject.toml files)
+                "rust_analyzer", -- LSP for Rust
 			},
 		},
 	},
@@ -78,6 +79,11 @@ local plugins = {
 
 			-- setup taplo with completion capabilities
 			lspconfig.taplo.setup({
+				capabilities = lspCapabilities,
+                on_attach = on_attach,
+			})
+
+			lspconfig.rust_analyzer.setup({
 				capabilities = lspCapabilities,
                 on_attach = on_attach,
 			})
