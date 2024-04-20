@@ -1,3 +1,4 @@
-require('martin.remap')
-require('martin.set')
-require('martin.lazy')
+require("martin.set")
+require("martin.keymap")
+require("martin.autocommand")
+require("martin.init-lazy")
