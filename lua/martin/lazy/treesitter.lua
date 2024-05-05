@@ -35,7 +35,19 @@ return {
 		-- Prefer git instead of curl in order to improve connectivity in some environments
 		require("nvim-treesitter.install").prefer_git = true
 		---@diagnostic disable-next-line: missing-fields
-		require("nvim-treesitter.configs").setup(opts)
+		require("nvim-treesitter.configs").setup({
+			highlight = {
+				enable = true,
+				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+				-- Using this option may slow down your editor, and you may see some duplicate highlights.
+				-- Instead of true it can also be a list of languages
+				additional_vim_regex_highlighting = false,
+			},
+			indent = {
+				disable = { "python" },
+			},
+		})
 
 		-- There are additional nvim-treesitter modules that you can use to interact
 		-- with nvim-treesitter. You should go explore a few and see what interests you:
