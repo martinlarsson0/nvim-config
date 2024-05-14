@@ -49,7 +49,7 @@ function filter_diagnostics(diagnostic)
 
 	-- Remove diagnostics which start with "Cannot access member"
 	if
-		string.match(diagnostic.message, "Cannot access member.+")
+		string.match(diagnostic.message, "Cannot access.+")
 		or string.match(diagnostic.message, "Cannot assign member.+")
 		or string.match(diagnostic.message, "Argument of type.+")
 		or string.match(diagnostic.message, '"kwargs" is not accessed')
