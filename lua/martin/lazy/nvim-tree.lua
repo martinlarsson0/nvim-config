@@ -24,10 +24,10 @@ end
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	dependencies = {
-		"kyazdani42/nvim-web-devicons",
-		lazy = true, -- optional, for file icons
-	},
+	-- dependencies = {
+	-- 	"kyazdani42/nvim-web-devicons",
+	-- 	lazy = true, -- optional, for file icons
+	-- },
 	version = "1.3.*",
 	lazy = false,
 	config = function()

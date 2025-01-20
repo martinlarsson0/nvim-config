@@ -114,7 +114,7 @@ return {
 			isort = {}, -- organize imports
 			taplo = {}, -- LSP for toml (for pyproject.toml files)
 			rust_analyzer = {}, -- LSP for Rust
-			tsserver = {},
+			ts_ls = {},
 			lua_ls = {
 				-- cmd = {...},
 				-- filetypes = { ...},
@@ -165,7 +165,7 @@ return {
 		local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
 			.. "/node_modules/@vue/language-server"
 		local lspconfig = require("lspconfig")
-		lspconfig.tsserver.setup({
+		lspconfig.ts_ls.setup({
 			init_options = {
 				plugins = {
 					{
