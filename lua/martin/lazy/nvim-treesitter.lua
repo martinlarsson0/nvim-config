@@ -17,6 +17,7 @@ return {
 			"typescript",
 			"rust",
 			"vue",
+			"go",
 		},
 		-- Autoinstall languages that are not installed
 		auto_install = true,
