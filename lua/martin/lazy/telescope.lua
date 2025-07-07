@@ -107,7 +107,7 @@ return {
 					num_pickers = 10,
 				},
 				layout_strategy = "horizontal",
-				layout_config = { height = 0.97, width = 0.97, preview_cutoff = 0, preview_width = 0.5 },
+				layout_config = { height = 0.97, width = 0.97, preview_cutoff = 0 },
 			},
 			extensions = {
 				["ui-select"] = {
