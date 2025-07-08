@@ -175,8 +175,8 @@ return {
 					},
 				},
 			},
-			vue_ls = {}, -- LSP for Vue
-			-- ts_ls = {}, -- LSP for TypeScript and JavaScript
+			-- Vue
+			vue_ls = {},
 			lua_ls = {
 				-- cmd = { ... },
 				-- filetypes = { ... },
@@ -209,6 +209,9 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
+			"eslint_d", -- Used to format JavaScript/TypeScript code
+			"stylelint", -- Used to format CSS/SCSS code
+			"prettierd", -- Used to format HTML, Vue, and other files
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
