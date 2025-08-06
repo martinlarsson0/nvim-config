@@ -14,10 +14,7 @@ return {
 	},
 	opts = {
 		notify_on_error = false,
-		format_on_save = function(bufnr)
-			-- Disable "format_on_save lsp_fallback" for languages that don't
-			-- have a well standardized coding style. You can add additional
-			-- languages here or re-enable it for the disabled ones.
+		format_after_save = function(bufnr)
 			local disable_filetypes = { c = true, cpp = true }
 			return {
 				timeout_ms = 500,
@@ -27,9 +24,9 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			javascript = { "prettierd", "eslint_d" },
-			typescript = { "prettierd", "eslint_d" },
-			vue = { "prettierd", "eslint_d", "stylelint" },
+			javascript = { "prettier", "eslint_d" },
+			typescript = { "prettier", "eslint_d" },
+			vue = { "prettier", "eslint_d", "stylelint" },
 		},
 	},
 }
