@@ -24,9 +24,9 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			javascript = { "prettier", "eslint_d" },
-			typescript = { "prettier", "eslint_d" },
-			vue = { "prettier", "eslint_d", "stylelint" },
+			javascript = { "prettierd", "eslint_d" },
+			typescript = { "prettierd", "eslint_d" },
+			vue = { "prettierd", "eslint_d", "stylelint" },
 		},
 	},
 }
