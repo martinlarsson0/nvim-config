@@ -123,7 +123,15 @@ return {
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "[P]roject [F]ind" })
-		vim.keymap.set("n", "<leader>phf", "<CMD>Telescope find_files no_ignore=true hidden=true<CR>")
+		-- no_ignore bypasses .gitignore, which is the only reason the worktrees copies
+		-- would show up here, so exclude them explicitly.
+		vim.keymap.set("n", "<leader>phf", function()
+			builtin.find_files({
+				no_ignore = true,
+				hidden = true,
+				find_command = { "rg", "--files", "--glob", "!worktrees/**" },
+			})
+		end)
 		vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Find git files" })
 		vim.keymap.set("n", "<leader>ps", builtin.live_grep)
 		vim.keymap.set("n", "<leader>pr", builtin.resume)

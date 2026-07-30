@@ -1,3 +1,11 @@
+-- Worktrees live inside the main checkout at <repo>/worktrees/<branch>, so from the
+-- main repo the tree would show a full copy of the codebase per worktree. Hide only
+-- that top-level directory: when nvim is started inside a worktree the path below
+-- does not exist, so nothing is hidden.
+local function is_worktrees_container(path)
+	return path == vim.fn.getcwd() .. "/worktrees"
+end
+
 local function my_on_attach(bufnr)
 	local api = require("nvim-tree.api")
 	-- Use all default mappings
@@ -35,6 +43,9 @@ return {
 			sort_by = "case_sensitive",
 			view = {
 				adaptive_size = true,
+			},
+			filters = {
+				custom = is_worktrees_container,
 			},
 			on_attach = my_on_attach,
 			git = {
