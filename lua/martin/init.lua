@@ -1,4 +1,5 @@
 require("martin.set")
 require("martin.keymap")
 require("martin.autocommand")
+require("martin.claude").setup()
 require("martin.init-lazy")
