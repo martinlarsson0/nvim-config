@@ -146,6 +146,9 @@ function M.attach_cmd(session, window)
     'sh', '-c', table.concat({
       ('tmux kill-session -t %s 2>/dev/null'):format(q(view)),
       ('tmux new-session -d -t %s -s %s'):format(q(session), q(view)),
+      -- Session-scoped, so the WezTerm client keeps its bar: without this you see
+      -- two status lines stacked, the outer server's and this view's.
+      ('tmux set-option -t %s status off'):format(q(view)),
       ('tmux select-window -t %s'):format(q(view .. ':' .. window)),
       ('TMUX= tmux attach -t %s'):format(q(view)),
     }, '; '),
@@ -159,6 +162,18 @@ end
 --- its Claude processes are untouched.
 function M.arm_autoclean(session)
   tmux({ 'set-option', '-t', M.view_name(session), 'destroy-unattached', 'on' })
+end
+
+--- Scroll back through the pane's history.
+---
+--- The tmux client puts the terminal into the alternate screen, so nvim keeps no
+--- scrollback of its own for this buffer — you only ever see the current page.
+--- The history lives in tmux's pane, reachable only through its copy-mode, and
+--- the inner client can never receive `C-b` because the outer server grabs the
+--- prefix first. So enter copy-mode over the CLI, where no prefix is involved.
+--- `-u` scrolls up a page on entry, so repeating the key keeps paging back.
+function M.copy_mode(session)
+  tmux({ 'copy-mode', '-u', '-t', M.view_name(session) })
 end
 
 function M.select_window(session, window)

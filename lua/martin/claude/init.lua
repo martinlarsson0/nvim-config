@@ -24,6 +24,9 @@ local config = {
   -- Inside the terminal every key belongs to Claude, so <leader>at cannot
   -- reach us. This buffer-local escape hatch hides the split, session intact.
   hide_key = '<C-q>',
+  -- Enters tmux copy-mode to reach the pane's history; press again to keep
+  -- paging up, then `q` to come back. See tmux.copy_mode for why this is needed.
+  scroll_key = '<PageUp>',
 }
 
 local state = {
@@ -188,6 +191,13 @@ local function spawn()
         M.hide()
       end, { buffer = state.buf, desc = 'Claude: hide split (session keeps running)' })
     end
+  end
+
+  if state.target and config.scroll_key and config.scroll_key ~= '' then
+    local session = state.target.session
+    vim.keymap.set('t', config.scroll_key, function()
+      tmux.copy_mode(session)
+    end, { buffer = state.buf, desc = 'Claude: scroll back (tmux copy-mode)' })
   end
 
   start_refresh()
